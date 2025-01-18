@@ -6,15 +6,22 @@ const PricingCard = ({
   price, 
   description, 
   features,
-  gradient
+  gradient,
+  isPopular
 }: { 
   title: string;
   price: string;
   description: string;
   features: string[];
   gradient: string;
+  isPopular?: boolean;
 }) => (
-  <div className={`p-6 rounded-xl ${gradient} text-white transition-transform hover:scale-105 duration-300`}>
+  <div className={`relative p-6 rounded-xl ${gradient} text-white transition-transform hover:scale-105 duration-300`}>
+    {isPopular && (
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-primary px-4 py-1 rounded-full text-sm font-semibold">
+        Most Popular
+      </div>
+    )}
     <h3 className="text-2xl font-bold mb-2">{title}</h3>
     <div className="text-3xl font-bold mb-2">${price}<span className="text-lg font-normal">/month</span></div>
     <p className="text-sm mb-6 opacity-90">{description}</p>
@@ -75,7 +82,8 @@ const Pricing = () => {
         "Mental Health Consultation",
         "Blood test Analysis"
       ],
-      gradient: "bg-gradient-accent"
+      gradient: "bg-gradient-accent",
+      isPopular: true
     }
   ];
 
