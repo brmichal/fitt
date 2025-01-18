@@ -42,19 +42,30 @@ const Features = () => {
           Transform your life with our comprehensive fitness solutions designed to help you achieve your health and wellness goals.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in flex flex-col items-center text-center"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mb-6">
-                <feature.icon className="w-8 h-8 text-white" />
+          {features.map((feature, index) => {
+            const gradientClasses = [
+              'dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 bg-gradient-to-br from-blue-50 to-indigo-100',
+              'dark:bg-gradient-to-br dark:from-gray-900 dark:to-purple-900 bg-gradient-to-br from-purple-50 to-pink-100',
+              'dark:bg-gradient-to-br dark:from-gray-800 dark:to-green-900 bg-gradient-to-br from-green-50 to-emerald-100',
+              'dark:bg-gradient-to-br dark:from-gray-900 dark:to-blue-900 bg-gradient-to-br from-blue-50 to-cyan-100',
+              'dark:bg-gradient-to-br dark:from-gray-800 dark:to-red-900 bg-gradient-to-br from-red-50 to-orange-100',
+              'dark:bg-gradient-to-br dark:from-gray-900 dark:to-yellow-900 bg-gradient-to-br from-yellow-50 to-amber-100'
+            ];
+
+            return (
+              <div 
+                key={index}
+                className={`${gradientClasses[index]} backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mb-6">
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-semibold mb-4 dark:text-white text-primary">{feature.title}</h3>
+                <p className="text-base md:text-lg dark:text-gray-300 text-gray-600">{feature.description}</p>
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-primary">{feature.title}</h3>
-              <p className="text-base md:text-lg text-gray-600">{feature.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
