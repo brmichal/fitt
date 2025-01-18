@@ -3,8 +3,8 @@ import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-gradient-primary text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
               <img 
@@ -12,7 +12,7 @@ const Footer = () => {
                 alt="GFA Logo" 
                 className="h-8 w-auto mr-2"
               />
-              <h3 className="text-2xl font-bold text-secondary">GetFitt.app</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-secondary">GetFitt.app</h3>
             </div>
             <p className="text-sm opacity-90">Transform your life through expert-led fitness training and nutrition guidance.</p>
           </div>
@@ -20,20 +20,20 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-secondary mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-accent transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Programs</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Trainers</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Contact</a></li>
+              <li><a href="#" className="text-sm hover:text-accent transition-colors">About Us</a></li>
+              <li><a href="#" className="text-sm hover:text-accent transition-colors">Programs</a></li>
+              <li><a href="#" className="text-sm hover:text-accent transition-colors">Trainers</a></li>
+              <li><a href="#" className="text-sm hover:text-accent transition-colors">Contact</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-semibold text-secondary mb-4">Programs</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-accent transition-colors">Personal Training</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Group Classes</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Nutrition Plans</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Online Coaching</a></li>
+              <li><a href="#" className="text-sm hover:text-accent transition-colors">Personal Training</a></li>
+              <li><a href="#" className="text-sm hover:text-accent transition-colors">Group Classes</a></li>
+              <li><a href="#" className="text-sm hover:text-accent transition-colors">Nutrition Plans</a></li>
+              <li><a href="#" className="text-sm hover:text-accent transition-colors">Online Coaching</a></li>
             </ul>
           </div>
           
