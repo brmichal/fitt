@@ -80,15 +80,17 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 overflow-x-auto">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4">Choose Your Plan</h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           Transform your life with our expertly crafted fitness and nutrition plans
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="flex flex-nowrap gap-8 justify-center min-w-max px-4">
           {plans.map((plan, index) => (
-            <PricingCard key={index} {...plan} />
+            <div key={index} className="w-[400px]">
+              <PricingCard {...plan} />
+            </div>
           ))}
         </div>
       </div>
