@@ -22,7 +22,7 @@ const counters = [
   },
   {
     icon: Target,
-    value: 50000,
+    value: 5000,
     suffix: "+",
     description: "active members",
   },
