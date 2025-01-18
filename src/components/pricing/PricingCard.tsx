@@ -1,6 +1,7 @@
 import { Button } from '../ui/button';
 import { PricingFeature } from './PricingFeature';
 import { PricingPrice } from './PricingPrice';
+import { Flame } from 'lucide-react';
 
 interface PricingCardProps {
   title: string;
@@ -21,14 +22,15 @@ export const PricingCard = ({
   gradient,
   isPopular
 }: PricingCardProps) => (
-  <div className={`relative p-6 rounded-xl ${gradient} text-white transition-transform hover:scale-105 duration-300 h-full flex flex-col`}>
+  <div className={`relative p-6 rounded-xl ${gradient} text-white transition-transform hover:scale-105 duration-300 h-full flex flex-col ${isPopular ? 'ring-2 ring-orange-400 animate-pulse' : ''}`}>
     {isPopular && (
-      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-primary px-4 py-1 rounded-full text-sm font-semibold">
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-primary px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+        <Flame className="w-4 h-4 text-orange-500" />
         Most Popular
       </div>
     )}
     <h3 className="text-2xl font-bold mb-2 text-center">{title}</h3>
-    <PricingPrice price={price} oldPrice={oldPrice} />
+    <PricingPrice price={price} oldPrice={oldPrice} isDark={title === "Performance Plan"} />
     <p className="text-sm mb-6 opacity-90 text-center min-h-[48px] flex items-center justify-center">
       {description}
     </p>
