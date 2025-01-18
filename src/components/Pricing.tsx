@@ -88,7 +88,7 @@ const Pricing = () => {
         </p>
         <div className="flex flex-nowrap gap-8 justify-center min-w-max px-4">
           {plans.map((plan, index) => (
-            <div key={index} className="w-[400px]">
+            <div key={index} className="w-[320px]">
               <PricingCard {...plan} />
             </div>
           ))}
