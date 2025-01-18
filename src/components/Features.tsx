@@ -41,7 +41,7 @@ const Features = () => {
         <p className="text-lg text-center mb-12 text-white/80 max-w-2xl mx-auto">
           Transform your life with our comprehensive fitness solutions designed to help you achieve your health and wellness goals.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div 
               key={index}
