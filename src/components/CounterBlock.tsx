@@ -49,7 +49,7 @@ const CounterBlock = () => {
                 <CountUp
                   start={0}
                   end={counter.value}
-                  duration={2.5}
+                  duration={10}
                   separator=","
                   suffix={counter.suffix}
                 />
