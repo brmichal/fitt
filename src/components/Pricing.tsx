@@ -16,19 +16,22 @@ const PricingCard = ({
   gradient: string;
   isPopular?: boolean;
 }) => (
-  <div className={`relative p-6 rounded-xl ${gradient} text-white transition-transform hover:scale-105 duration-300`}>
+  <div className={`relative p-6 rounded-xl ${gradient} text-white transition-transform hover:scale-105 duration-300 h-full flex flex-col`}>
     {isPopular && (
       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-primary px-4 py-1 rounded-full text-sm font-semibold">
         Most Popular
       </div>
     )}
     <h3 className="text-2xl font-bold mb-2">{title}</h3>
-    <div className="text-3xl font-bold mb-2">${price}<span className="text-lg font-normal">/month</span></div>
-    <p className="text-sm mb-6 opacity-90">{description}</p>
-    <ul className="space-y-3">
+    <div className="text-center mb-2">
+      <span className="text-4xl font-bold">${price}</span>
+      <span className="text-lg font-normal">/month</span>
+    </div>
+    <p className="text-sm mb-6 opacity-90 text-center">{description}</p>
+    <ul className="space-y-3 flex-grow">
       {features.map((feature, index) => (
         <li key={index} className="flex items-center gap-2">
-          <Check className="h-5 w-5 text-secondary" />
+          <Check className="h-5 w-5 text-secondary flex-shrink-0" />
           <span>{feature}</span>
         </li>
       ))}
@@ -94,9 +97,9 @@ const Pricing = () => {
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           Transform your life with our expertly crafted fitness and nutrition plans
         </p>
-        <div className="flex flex-nowrap gap-8 justify-center min-w-max px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
           {plans.map((plan, index) => (
-            <div key={index} className="w-[320px]">
+            <div key={index} className="h-full">
               <PricingCard {...plan} />
             </div>
           ))}
