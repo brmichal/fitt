@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 const PricingCard = ({ 
   title, 
   price, 
+  oldPrice,
   description, 
   features,
   gradient,
@@ -11,6 +12,7 @@ const PricingCard = ({
 }: { 
   title: string;
   price: string;
+  oldPrice: string;
   description: string;
   features: string[];
   gradient: string;
@@ -24,7 +26,10 @@ const PricingCard = ({
     )}
     <h3 className="text-2xl font-bold mb-2 text-center">{title}</h3>
     <div className="text-center mb-2">
-      <span className="text-4xl font-bold">${price}</span>
+      <div className="flex items-center justify-center gap-2">
+        <span className="text-red-500 line-through text-2xl">${oldPrice}</span>
+        <span className="text-4xl font-bold text-green-400">${price}</span>
+      </div>
       <span className="text-lg font-normal">/month</span>
     </div>
     <p className="text-sm mb-6 opacity-90 text-center min-h-[48px] flex items-center justify-center">{description}</p>
@@ -47,6 +52,7 @@ const Pricing = () => {
     {
       title: "Lifestyle Plan",
       price: "29",
+      oldPrice: "99",
       description: "For building sustainable and long-term habits",
       features: [
         "Diet Plan for 5 days/week",
@@ -59,6 +65,7 @@ const Pricing = () => {
     {
       title: "Performance Plan",
       price: "39",
+      oldPrice: "119",
       description: "Designed for athletic or fitness performance",
       features: [
         "Diet Plan for 6 days/week",
@@ -73,6 +80,7 @@ const Pricing = () => {
     {
       title: "Transformation Plan",
       price: "49",
+      oldPrice: "149",
       description: "A complete body and health overhaul",
       features: [
         "Diet Plan for 7 days/week",
