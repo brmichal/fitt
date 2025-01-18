@@ -12,7 +12,7 @@ const Hero = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-primary opacity-[0.98]"></div>
+        <div className="absolute inset-0 bg-gradient-primary opacity-50"></div>
       </div>
       
       {/* Content */}
@@ -31,7 +31,3 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-export default Hero;
