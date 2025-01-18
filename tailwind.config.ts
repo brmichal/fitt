@@ -51,10 +51,6 @@ export default {
       animation: {
         "fade-in": "fade-in 0.5s ease-out",
       },
-      boxShadow: {
-        'button': '0 4px 14px 0 rgba(0, 0, 0, 0.2)',
-        'button-hover': '0 6px 20px 0 rgba(0, 0, 0, 0.3)',
-      },
     },
   },
   plugins: [require("tailwindcss-animate")],
