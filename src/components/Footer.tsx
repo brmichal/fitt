@@ -12,7 +12,7 @@ const Footer = () => {
                 alt="GFA Logo" 
                 className="h-8 w-auto mr-2"
               />
-              <h3 className="text-2xl font-bold text-secondary">FitLife</h3>
+              <h3 className="text-2xl font-bold text-secondary">GetFitt.app</h3>
             </div>
             <p className="text-sm opacity-90">Transform your life through expert-led fitness training and nutrition guidance.</p>
           </div>
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm opacity-80">
-          <p>&copy; {new Date().getFullYear()} FitLife. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} GetFitt.app. All rights reserved.</p>
         </div>
       </div>
     </footer>

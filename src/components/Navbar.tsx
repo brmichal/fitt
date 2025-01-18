@@ -23,7 +23,7 @@ const Navbar = () => {
               alt="GFA Logo" 
               className="h-8 w-auto"
             />
-            <span className="text-2xl font-bold text-primary ml-2">FitLife</span>
+            <span className="text-2xl font-bold text-primary ml-2">GetFitt.app</span>
           </div>
           
           {/* Desktop Menu */}
