@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center">
-      {/* Background Image */}
+      {/* Background with Gradient Overlay */}
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -12,7 +12,7 @@ const Hero = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-primary opacity-90"></div>
       </div>
       
       {/* Content */}
@@ -21,10 +21,10 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Transform Your Life Through Fitness
           </h1>
-          <p className="text-xl text-gray-200 mb-8">
+          <p className="text-xl text-secondary mb-8">
             Expert-led training programs and personalized nutrition plans to help you achieve your fitness goals.
           </p>
-          <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg flex items-center space-x-2 transition-colors">
+          <button className="bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded-lg flex items-center space-x-2 transition-colors">
             <span>Get Started</span>
             <ArrowRight size={20} />
           </button>

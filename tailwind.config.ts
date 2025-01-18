@@ -25,13 +25,22 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#8B5CF6",
-          hover: "#7C3AED",
+          DEFAULT: "#122c39",
+          hover: "#0a1820",
         },
         secondary: {
-          DEFAULT: "#F3F4F6",
-          foreground: "#4B5563",
+          DEFAULT: "#a6dfb7",
+          foreground: "#122c39",
         },
+        accent: {
+          DEFAULT: "#c331ff",
+          hover: "#b01ee6",
+        }
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(135deg, #122c39 0%, #a6dfb7 100%)',
+        'gradient-secondary': 'linear-gradient(135deg, #a6dfb7 0%, #c331ff 100%)',
+        'gradient-accent': 'linear-gradient(135deg, #c331ff 0%, #122c39 100%)',
       },
       keyframes: {
         "fade-in": {
