@@ -17,8 +17,13 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-primary">FitLife</span>
+          <div className="flex-shrink-0 flex items-center">
+            <img 
+              src="/lovable-uploads/f139e559-e896-4d61-be20-34e442ec8da5.png" 
+              alt="GFA Logo" 
+              className="h-8 w-auto"
+            />
+            <span className="text-2xl font-bold text-primary ml-2">FitLife</span>
           </div>
           
           {/* Desktop Menu */}

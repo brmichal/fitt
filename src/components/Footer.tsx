@@ -6,7 +6,14 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold text-secondary mb-4">FitLife</h3>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/lovable-uploads/f139e559-e896-4d61-be20-34e442ec8da5.png" 
+                alt="GFA Logo" 
+                className="h-8 w-auto mr-2"
+              />
+              <h3 className="text-2xl font-bold text-secondary">FitLife</h3>
+            </div>
             <p className="text-sm opacity-90">Transform your life through expert-led fitness training and nutrition guidance.</p>
           </div>
           
