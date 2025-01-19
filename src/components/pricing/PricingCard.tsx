@@ -25,8 +25,8 @@ export const PricingCard = ({
   <div className={`relative p-6 rounded-xl ${gradient} text-white transition-transform hover:scale-105 duration-300 h-full flex flex-col ${isPopular ? 'ring-2 ring-orange-400 animate-pulse' : ''}`}>
     {isPopular && (
       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-primary px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-        <Flame className="w-4 h-4 text-orange-500" />
-        Most Popular
+        <Flame className="w-4 h-4 text-orange-500 fill-orange-500" />
+        Incredibly impactful
       </div>
     )}
     <h3 className="text-2xl font-bold mb-2 text-center">{title}</h3>
@@ -39,8 +39,9 @@ export const PricingCard = ({
         <PricingFeature key={index} feature={feature} />
       ))}
     </ul>
-    <Button className="w-full mt-6 bg-secondary hover:bg-secondary/90 text-primary font-semibold">
+    <Button className="w-full mt-6 bg-secondary hover:bg-secondary/90 text-primary font-semibold flex items-center justify-center gap-2">
       Get Started
+      {title === "Transformation Plan" && <Flame className="w-4 h-4 text-orange-500 fill-orange-500" />}
     </Button>
   </div>
 );
