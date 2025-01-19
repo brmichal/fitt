@@ -1,9 +1,23 @@
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen pt-20 bg-gradient-to-b from-background to-secondary">
       <div className="container mx-auto px-4 py-16">
+        <Button 
+          variant="outline" 
+          onClick={() => navigate(-1)}
+          className="mb-8"
+        >
+          <ArrowLeft className="mr-2" />
+          Back
+        </Button>
+
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary dark:text-white">
           About GetFitt.app
         </h1>

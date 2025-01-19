@@ -7,12 +7,12 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import Nutrition from "./pages/Nutrition";
+import Training from "./pages/Training";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
-    // Check system preference for dark mode
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('darkMode', 'true');
@@ -29,6 +29,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/nutrition" element={<Nutrition />} />
+            <Route path="/training" element={<Training />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
