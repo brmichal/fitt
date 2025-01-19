@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
+import Nutrition from "./pages/Nutrition";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/nutrition" element={<Nutrition />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
