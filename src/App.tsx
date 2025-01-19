@@ -8,6 +8,9 @@ import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import Nutrition from "./pages/Nutrition";
 import Training from "./pages/Training";
+import Programs from "./pages/Programs";
+import Trainers from "./pages/Trainers";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +33,9 @@ const App = () => {
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/nutrition" element={<Nutrition />} />
             <Route path="/training" element={<Training />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/trainers" element={<Trainers />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
