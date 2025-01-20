@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Switch } from "@/components/ui/switch";
 import {
   Select,
   SelectContent,
@@ -22,6 +23,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
+import { useState } from "react";
 
 const formSchema = z.object({
   gender: z.enum(["male", "female", "other"]),
@@ -50,6 +52,10 @@ interface HealthProfileFormProps {
 export function HealthProfileForm({ planType }: HealthProfileFormProps) {
   const { toast } = useToast();
   const navigate = useNavigate();
+  const [useMetric, setUseMetric] = useState(false);
+  const [heightFeet, setHeightFeet] = useState("");
+  const [heightInches, setHeightInches] = useState("");
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -58,10 +64,37 @@ export function HealthProfileForm({ planType }: HealthProfileFormProps) {
     },
   });
 
+  const convertWeight = (value: string, toMetric: boolean) => {
+    const numValue = parseFloat(value);
+    if (isNaN(numValue)) return "";
+    return toMetric
+      ? (numValue * 0.453592).toFixed(1) // lb to kg
+      : (numValue * 2.20462).toFixed(1); // kg to lb
+  };
+
+  const convertHeightToMetric = (feet: string, inches: string) => {
+    const totalInches = (parseInt(feet) * 12) + parseInt(inches);
+    return (totalInches * 2.54).toFixed(1);
+  };
+
+  const convertHeightToImperial = (cm: string) => {
+    const totalInches = parseFloat(cm) / 2.54;
+    const feet = Math.floor(totalInches / 12);
+    const inches = Math.round(totalInches % 12);
+    return { feet: feet.toString(), inches: inches.toString() };
+  };
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    // Convert measurements to metric before saving if they're in imperial
+    const finalValues = {
+      ...values,
+      weight: useMetric ? values.weight : parseFloat((parseFloat(values.weight.toString()) * 0.453592).toFixed(1)),
+      height: useMetric ? values.height : parseFloat(convertHeightToMetric(heightFeet, heightInches)),
+    };
+
     const { error } = await supabase
       .from('health_profiles')
-      .insert([{ ...values, plan_type: planType }]);
+      .insert([{ ...finalValues, plan_type: planType }]);
 
     if (error) {
       toast({
@@ -121,33 +154,108 @@ export function HealthProfileForm({ planType }: HealthProfileFormProps) {
             )}
           />
 
-          <FormField
-            control={form.control}
-            name="weight"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Weight (kg)</FormLabel>
-                <FormControl>
-                  <Input type="number" step="0.1" placeholder="Enter your weight" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="space-y-2">
+            <FormField
+              control={form.control}
+              name="weight"
+              render={({ field }) => (
+                <FormItem>
+                  <div className="flex justify-between items-center">
+                    <FormLabel>Weight ({useMetric ? 'kg' : 'lb'})</FormLabel>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-sm">lb</span>
+                      <Switch
+                        checked={useMetric}
+                        onCheckedChange={(checked) => {
+                          setUseMetric(checked);
+                          field.onChange(convertWeight(field.value.toString(), checked));
+                        }}
+                      />
+                      <span className="text-sm">kg</span>
+                    </div>
+                  </div>
+                  <FormControl>
+                    <Input
+                      type="number"
+                      step="0.1"
+                      placeholder={`Enter your weight in ${useMetric ? 'kg' : 'lb'}`}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
-          <FormField
-            control={form.control}
-            name="height"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Height (cm)</FormLabel>
-                <FormControl>
-                  <Input type="number" step="0.1" placeholder="Enter your height" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="space-y-2">
+            <FormField
+              control={form.control}
+              name="height"
+              render={({ field }) => (
+                <FormItem>
+                  <div className="flex justify-between items-center">
+                    <FormLabel>Height {useMetric ? '(cm)' : '(ft & in)'}</FormLabel>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-sm">ft/in</span>
+                      <Switch
+                        checked={useMetric}
+                        onCheckedChange={(checked) => {
+                          setUseMetric(checked);
+                          if (checked && heightFeet && heightInches) {
+                            const cm = convertHeightToMetric(heightFeet, heightInches);
+                            field.onChange(cm);
+                          } else if (!checked && field.value) {
+                            const imperial = convertHeightToImperial(field.value.toString());
+                            setHeightFeet(imperial.feet);
+                            setHeightInches(imperial.inches);
+                            field.onChange("");
+                          }
+                        }}
+                      />
+                      <span className="text-sm">cm</span>
+                    </div>
+                  </div>
+                  <FormControl>
+                    {useMetric ? (
+                      <Input
+                        type="number"
+                        step="0.1"
+                        placeholder="Enter your height in cm"
+                        {...field}
+                      />
+                    ) : (
+                      <div className="flex gap-2">
+                        <Input
+                          type="number"
+                          placeholder="Feet"
+                          value={heightFeet}
+                          onChange={(e) => {
+                            setHeightFeet(e.target.value);
+                            if (e.target.value && heightInches) {
+                              field.onChange(convertHeightToMetric(e.target.value, heightInches));
+                            }
+                          }}
+                        />
+                        <Input
+                          type="number"
+                          placeholder="Inches"
+                          value={heightInches}
+                          onChange={(e) => {
+                            setHeightInches(e.target.value);
+                            if (heightFeet && e.target.value) {
+                              field.onChange(convertHeightToMetric(heightFeet, e.target.value));
+                            }
+                          }}
+                        />
+                      </div>
+                    )}
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
           <FormField
             control={form.control}
