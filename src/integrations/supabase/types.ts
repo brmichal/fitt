@@ -9,6 +9,42 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      Dietary: {
+        Row: {
+          Description: string | null
+          "Field Name": string | null
+        }
+        Insert: {
+          Description?: string | null
+          "Field Name"?: string | null
+        }
+        Update: {
+          Description?: string | null
+          "Field Name"?: string | null
+        }
+        Relationships: []
+      }
+      FORMULAR: {
+        Row: {
+          AGE: number | null
+          GENDER: Database["public"]["Enums"]["GENDER"]
+          NAME: string
+          WEIGHT: number | null
+        }
+        Insert: {
+          AGE?: number | null
+          GENDER: Database["public"]["Enums"]["GENDER"]
+          NAME: string
+          WEIGHT?: number | null
+        }
+        Update: {
+          AGE?: number | null
+          GENDER?: Database["public"]["Enums"]["GENDER"]
+          NAME?: string
+          WEIGHT?: number | null
+        }
+        Relationships: []
+      }
       program_types: {
         Row: {
           created_at: string
@@ -33,6 +69,12 @@ export type Database = {
         }
         Relationships: []
       }
+      table: {
+        Row: {}
+        Insert: {}
+        Update: {}
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -41,7 +83,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      GENDER: "MALE" | "FEMALE"
     }
     CompositeTypes: {
       [_ in never]: never
