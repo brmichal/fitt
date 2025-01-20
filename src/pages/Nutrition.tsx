@@ -1,11 +1,23 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Nutrition = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary to-secondary">
       <Navbar />
       <main className="container mx-auto px-4 py-20">
+        <Button 
+          variant="outline" 
+          onClick={() => navigate(-1)}
+          className="mb-8"
+        >
+          Back
+        </Button>
+
         <div className="max-w-4xl mx-auto space-y-8">
           <h1 className="text-4xl md:text-5xl font-bold text-center mt-10 mb-6 text-white">
             Nutrition: Your Path to Optimal Health
