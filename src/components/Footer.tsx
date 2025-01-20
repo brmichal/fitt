@@ -48,9 +48,20 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        {/* Payment Methods */}
+        <div className="mt-8 border-t border-white/10 pt-8">
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
+            <img src="https://cdn.jsdelivr.net/gh/transferwise/currency-flags/src/flags/usd.svg" alt="Visa" className="h-8" />
+            <img src="https://cdn.jsdelivr.net/gh/transferwise/currency-flags/src/flags/eur.svg" alt="Mastercard" className="h-8" />
+            <img src="https://cdn.jsdelivr.net/gh/transferwise/currency-flags/src/flags/gbp.svg" alt="American Express" className="h-8" />
+            <img src="https://cdn.jsdelivr.net/gh/transferwise/currency-flags/src/flags/chf.svg" alt="Apple Pay" className="h-8" />
+            <img src="https://cdn.jsdelivr.net/gh/transferwise/currency-flags/src/flags/sek.svg" alt="Google Pay" className="h-8" />
+          </div>
+        </div>
         
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm opacity-80">
-          <p>&copy; {new Date().getFullYear()} GetFitt.app. All rights reserved.</p>
+          <p>&copy; 2022 GetFitt.app. All rights reserved.</p>
         </div>
       </div>
     </footer>
