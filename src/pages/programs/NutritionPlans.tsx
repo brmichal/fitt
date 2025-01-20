@@ -22,6 +22,19 @@ const NutritionPlans = () => {
           <section className="bg-white/5 backdrop-blur-sm rounded-lg p-8 shadow-xl">
             <h1 className="text-4xl font-bold text-white mb-8">Nutrition Plans</h1>
             
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <img 
+                src="/lovable-uploads/4e33b590-268c-4cd9-bcbc-ea07efff459a.png"
+                alt="Healthy Meal" 
+                className="w-full rounded-lg shadow-lg"
+              />
+              <img 
+                src="/lovable-uploads/8e79872f-6fab-4ae6-b530-e408532901d8.png"
+                alt="Healthy Eating" 
+                className="w-full rounded-lg shadow-lg"
+              />
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="bg-white/10 backdrop-blur-sm border-none">
                 <CardHeader>
