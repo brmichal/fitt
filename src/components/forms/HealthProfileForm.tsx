@@ -20,10 +20,34 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
+
+const trainingOptions = [
+  "Walking",
+  "Jogging",
+  "Running",
+  "Cycling",
+  "Swimming",
+  "Stretching",
+  "Yoga",
+  "Gym Trainings",
+  "Aerobics",
+  "Pilates",
+  "Hiking",
+  "Playing Soccer",
+  "Basketball",
+  "Tennis",
+  "Badminton",
+  "Dancing",
+  "Martial Arts",
+  "Skiing/Snowboarding",
+  "Rock Climbing",
+  "Surfing",
+] as const;
 
 const formSchema = z.object({
   gender: z.enum(["male", "female", "other"]),
@@ -31,6 +55,7 @@ const formSchema = z.object({
   weight: z.string().transform(Number).pipe(z.number().positive()),
   height: z.string().transform(Number).pipe(z.number().positive()),
   activity_type: z.enum(["sedentary", "lightly_active", "moderately_active", "very_active", "extremely_active"]),
+  preferred_training: z.array(z.string()).optional(),
   daily_schedule: z.string().optional(),
   sleep_patterns: z.string().optional(),
   current_medications: z.string().optional(),
@@ -61,6 +86,7 @@ export function HealthProfileForm({ planType }: HealthProfileFormProps) {
     defaultValues: {
       gender: "male",
       activity_type: "sedentary",
+      preferred_training: [],
     },
   });
 
@@ -297,6 +323,52 @@ export function HealthProfileForm({ planType }: HealthProfileFormProps) {
                     <SelectItem value="extremely_active">Extremely Active</SelectItem>
                   </SelectContent>
                 </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="preferred_training"
+            render={() => (
+              <FormItem>
+                <FormLabel>Preferred Training Environment</FormLabel>
+                <div className="grid grid-cols-2 gap-4">
+                  {trainingOptions.map((item) => (
+                    <FormField
+                      key={item}
+                      control={form.control}
+                      name="preferred_training"
+                      render={({ field }) => {
+                        return (
+                          <FormItem
+                            key={item}
+                            className="flex flex-row items-start space-x-3 space-y-0"
+                          >
+                            <FormControl>
+                              <Checkbox
+                                checked={field.value?.includes(item)}
+                                onCheckedChange={(checked) => {
+                                  return checked
+                                    ? field.onChange([...field.value || [], item])
+                                    : field.onChange(
+                                        field.value?.filter(
+                                          (value) => value !== item
+                                        )
+                                      )
+                                }}
+                              />
+                            </FormControl>
+                            <FormLabel className="font-normal">
+                              {item}
+                            </FormLabel>
+                          </FormItem>
+                        )
+                      }}
+                    />
+                  ))}
+                </div>
                 <FormMessage />
               </FormItem>
             )}

@@ -64,6 +64,7 @@ export type Database = {
           id: string
           nutritional_knowledge: string | null
           plan_type: string
+          preferred_training: string[] | null
           religious_restrictions: string | null
           sleep_patterns: string | null
           updated_at: string
@@ -87,6 +88,7 @@ export type Database = {
           id?: string
           nutritional_knowledge?: string | null
           plan_type: string
+          preferred_training?: string[] | null
           religious_restrictions?: string | null
           sleep_patterns?: string | null
           updated_at?: string
@@ -110,6 +112,7 @@ export type Database = {
           id?: string
           nutritional_knowledge?: string | null
           plan_type?: string
+          preferred_training?: string[] | null
           religious_restrictions?: string | null
           sleep_patterns?: string | null
           updated_at?: string
@@ -163,6 +166,27 @@ export type Database = {
         | "extremely_active"
       GENDER: "MALE" | "FEMALE"
       gender_type: "male" | "female" | "other"
+      preferred_training_type:
+        | "Walking"
+        | "Jogging"
+        | "Running"
+        | "Cycling"
+        | "Swimming"
+        | "Stretching"
+        | "Yoga"
+        | "Gym Trainings"
+        | "Aerobics"
+        | "Pilates"
+        | "Hiking"
+        | "Playing Soccer"
+        | "Basketball"
+        | "Tennis"
+        | "Badminton"
+        | "Dancing"
+        | "Martial Arts"
+        | "Skiing/Snowboarding"
+        | "Rock Climbing"
+        | "Surfing"
     }
     CompositeTypes: {
       [_ in never]: never
