@@ -9,6 +9,10 @@ import AboutUs from "./pages/AboutUs";
 import Nutrition from "./pages/Nutrition";
 import Training from "./pages/Training";
 import Programs from "./pages/Programs";
+import PersonalTraining from "./pages/programs/PersonalTraining";
+import GroupClasses from "./pages/programs/GroupClasses";
+import NutritionPlans from "./pages/programs/NutritionPlans";
+import OnlineCoaching from "./pages/programs/OnlineCoaching";
 import Trainers from "./pages/Trainers";
 import Contact from "./pages/Contact";
 
@@ -34,6 +38,10 @@ const App = () => {
             <Route path="/nutrition" element={<Nutrition />} />
             <Route path="/training" element={<Training />} />
             <Route path="/programs" element={<Programs />} />
+            <Route path="/programs/personal-training" element={<PersonalTraining />} />
+            <Route path="/programs/group-classes" element={<GroupClasses />} />
+            <Route path="/programs/nutrition-plans" element={<NutritionPlans />} />
+            <Route path="/programs/online-coaching" element={<OnlineCoaching />} />
             <Route path="/trainers" element={<Trainers />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
