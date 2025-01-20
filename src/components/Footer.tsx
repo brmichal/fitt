@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Youtube, CreditCard, Paypal } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, CreditCard, Wallet, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -53,8 +53,9 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-8 pt-8">
           <div className="flex justify-center items-center space-x-6">
             <CreditCard className="w-8 h-8 text-white/80 hover:text-white transition-colors" />
-            <CreditCard className="w-8 h-8 text-white/80 hover:text-white transition-colors" />
-            <Paypal className="w-8 h-8 text-white/80 hover:text-white transition-colors" />
+            <Wallet className="w-8 h-8 text-white/80 hover:text-white transition-colors" />
+            <DollarSign className="w-8 h-8 text-white/80 hover:text-white transition-colors" />
+            <CreditCard className="w-8 h-8 text-white/80 hover:text-white transition-colors rotate-12" />
           </div>
         </div>
         
