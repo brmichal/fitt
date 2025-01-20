@@ -45,6 +45,78 @@ export type Database = {
         }
         Relationships: []
       }
+      health_profiles: {
+        Row: {
+          activity_type: Database["public"]["Enums"]["activity_level"]
+          age: number
+          created_at: string
+          current_medications: string | null
+          daily_schedule: string | null
+          dietary_preferences: string | null
+          disliked_foods: string | null
+          drugs: string | null
+          favourite_foods: string | null
+          food_allergies: string | null
+          food_budget: string | null
+          gender: Database["public"]["Enums"]["gender_type"]
+          health_problems: string | null
+          height: number
+          id: string
+          nutritional_knowledge: string | null
+          plan_type: string
+          religious_restrictions: string | null
+          sleep_patterns: string | null
+          updated_at: string
+          weight: number
+        }
+        Insert: {
+          activity_type: Database["public"]["Enums"]["activity_level"]
+          age: number
+          created_at?: string
+          current_medications?: string | null
+          daily_schedule?: string | null
+          dietary_preferences?: string | null
+          disliked_foods?: string | null
+          drugs?: string | null
+          favourite_foods?: string | null
+          food_allergies?: string | null
+          food_budget?: string | null
+          gender: Database["public"]["Enums"]["gender_type"]
+          health_problems?: string | null
+          height: number
+          id?: string
+          nutritional_knowledge?: string | null
+          plan_type: string
+          religious_restrictions?: string | null
+          sleep_patterns?: string | null
+          updated_at?: string
+          weight: number
+        }
+        Update: {
+          activity_type?: Database["public"]["Enums"]["activity_level"]
+          age?: number
+          created_at?: string
+          current_medications?: string | null
+          daily_schedule?: string | null
+          dietary_preferences?: string | null
+          disliked_foods?: string | null
+          drugs?: string | null
+          favourite_foods?: string | null
+          food_allergies?: string | null
+          food_budget?: string | null
+          gender?: Database["public"]["Enums"]["gender_type"]
+          health_problems?: string | null
+          height?: number
+          id?: string
+          nutritional_knowledge?: string | null
+          plan_type?: string
+          religious_restrictions?: string | null
+          sleep_patterns?: string | null
+          updated_at?: string
+          weight?: number
+        }
+        Relationships: []
+      }
       program_types: {
         Row: {
           created_at: string
@@ -83,7 +155,14 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
+      activity_level:
+        | "sedentary"
+        | "lightly_active"
+        | "moderately_active"
+        | "very_active"
+        | "extremely_active"
       GENDER: "MALE" | "FEMALE"
+      gender_type: "male" | "female" | "other"
     }
     CompositeTypes: {
       [_ in never]: never

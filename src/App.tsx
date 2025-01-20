@@ -15,6 +15,9 @@ import NutritionPlans from "./pages/programs/NutritionPlans";
 import OnlineCoaching from "./pages/programs/OnlineCoaching";
 import Trainers from "./pages/Trainers";
 import Contact from "./pages/Contact";
+import LifestylePlanRegistration from "./pages/programs/registration/LifestylePlanRegistration";
+import PerformancePlanRegistration from "./pages/programs/registration/PerformancePlanRegistration";
+import TransformationPlanRegistration from "./pages/programs/registration/TransformationPlanRegistration";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +47,9 @@ const App = () => {
             <Route path="/programs/online-coaching" element={<OnlineCoaching />} />
             <Route path="/trainers" element={<Trainers />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/programs/lifestyle-plan-registration" element={<LifestylePlanRegistration />} />
+            <Route path="/programs/performance-plan-registration" element={<PerformancePlanRegistration />} />
+            <Route path="/programs/transformation-plan-registration" element={<TransformationPlanRegistration />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
