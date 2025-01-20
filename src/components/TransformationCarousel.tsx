@@ -38,7 +38,7 @@ const transformations = [
   },
   {
     image: "/lovable-uploads/de060a74-999e-4fb1-a789-262eb5c0d0a7.png",
-    name: "Chris Rodriguez",
+    name: "Samanta Rodriguez",
     location: "Miami, Florida",
     rating: 5,
     description: "Completely transformed my body and mindset. GetFitt.app's holistic approach helped me build muscle and strength like never before.",
