@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -20,20 +21,20 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-secondary mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm hover:text-accent transition-colors">About Us</a></li>
-              <li><a href="#" className="text-sm hover:text-accent transition-colors">Programs</a></li>
-              <li><a href="#" className="text-sm hover:text-accent transition-colors">Trainers</a></li>
-              <li><a href="#" className="text-sm hover:text-accent transition-colors">Contact</a></li>
+              <li><Link to="/aboutus" className="text-sm hover:text-accent transition-colors">About Us</Link></li>
+              <li><Link to="/programs" className="text-sm hover:text-accent transition-colors">Programs</Link></li>
+              <li><Link to="/trainers" className="text-sm hover:text-accent transition-colors">Trainers</Link></li>
+              <li><Link to="/contact" className="text-sm hover:text-accent transition-colors">Contact</Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-semibold text-secondary mb-4">Programs</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm hover:text-accent transition-colors">Personal Training</a></li>
-              <li><a href="#" className="text-sm hover:text-accent transition-colors">Group Classes</a></li>
-              <li><a href="#" className="text-sm hover:text-accent transition-colors">Nutrition Plans</a></li>
-              <li><a href="#" className="text-sm hover:text-accent transition-colors">Online Coaching</a></li>
+              <li><Link to="/programs/personal-training" className="text-sm hover:text-accent transition-colors">Personal Training</Link></li>
+              <li><Link to="/programs/group-classes" className="text-sm hover:text-accent transition-colors">Group Classes</Link></li>
+              <li><Link to="/programs/nutrition-plans" className="text-sm hover:text-accent transition-colors">Nutrition Plans</Link></li>
+              <li><Link to="/programs/online-coaching" className="text-sm hover:text-accent transition-colors">Online Coaching</Link></li>
             </ul>
           </div>
           
