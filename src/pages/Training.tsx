@@ -44,7 +44,7 @@ const Training = () => {
                 </ul>
               </div>
               <img 
-                src="/lovable-uploads/entry-level-training.jpg" 
+                src="/lovable-uploads/2a933066-58d7-4346-ab92-9822e8b88856.png" 
                 alt="Entry Level Training" 
                 className="rounded-lg object-cover w-full h-64"
               />
@@ -56,7 +56,7 @@ const Training = () => {
             <h2 className="text-3xl font-bold mb-6 text-primary">Experienced Level</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <img 
-                src="/lovable-uploads/experienced-training.jpg" 
+                src="/lovable-uploads/1f891b2e-608f-4443-b1c4-f99e2f81d2a9.png" 
                 alt="Experienced Training" 
                 className="rounded-lg object-cover w-full h-64"
               />
@@ -90,7 +90,7 @@ const Training = () => {
                 </ul>
               </div>
               <img 
-                src="/lovable-uploads/master-training.jpg" 
+                src="/lovable-uploads/49d11a93-6299-4901-8bb1-b5988a05566a.png" 
                 alt="Master Level Training" 
                 className="rounded-lg object-cover w-full h-64"
               />
