@@ -54,19 +54,19 @@ const TransformationCarousel = () => {
           Real results from real people who trusted GetFitt.app
         </p>
         
-        <Carousel className="max-w-4xl mx-auto">
+        <Carousel className="max-w-5xl mx-auto">
           <CarouselContent>
             {transformations.map((item, index) => (
               <CarouselItem key={index}>
                 <div className="p-6">
-                  <div className="mb-6">
+                  <div className="mb-8 aspect-square max-w-2xl mx-auto">
                     <img
                       src={item.image}
                       alt={`${item.name}'s transformation`}
-                      className="w-full h-64 object-cover rounded-lg mx-auto"
+                      className="w-full h-full object-cover rounded-lg shadow-lg"
                     />
                   </div>
-                  <div className="text-center">
+                  <div className="text-center max-w-xl mx-auto">
                     <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
                     <p className="text-sm text-gray-500 mb-2">{item.location}</p>
                     <div className="flex justify-center mb-3">
