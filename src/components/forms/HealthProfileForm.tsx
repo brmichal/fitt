@@ -145,11 +145,11 @@ export function HealthProfileForm({ planType }: HealthProfileFormProps) {
                 <FormLabel>Gender</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="bg-background">
                       <SelectValue placeholder="Select gender" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className="bg-background border shadow-lg">
                     <SelectItem value="male">Male</SelectItem>
                     <SelectItem value="female">Female</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
@@ -285,11 +285,11 @@ export function HealthProfileForm({ planType }: HealthProfileFormProps) {
                 <FormLabel>Activity Level</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="bg-background">
                       <SelectValue placeholder="Select activity level" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className="bg-background border shadow-lg">
                     <SelectItem value="sedentary">Sedentary</SelectItem>
                     <SelectItem value="lightly_active">Lightly Active</SelectItem>
                     <SelectItem value="moderately_active">Moderately Active</SelectItem>
