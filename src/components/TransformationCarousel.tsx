@@ -9,25 +9,44 @@ import { Star } from "lucide-react";
 
 const transformations = [
   {
-    before: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
-    after: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
-    name: "John D.",
+    before: "/lovable-uploads/ba7f135f-5e35-4748-8685-d4428173d2ea.png",
+    after: "/lovable-uploads/ba7f135f-5e35-4748-8685-d4428173d2ea.png",
+    name: "Emily Anderson",
+    location: "Denver, Colorado",
     rating: 5,
-    description: "Lost 30kg in 6 months following GetFitt.app program",
+    description: "Transformed my lifestyle with GetFitt.app's comprehensive program. Lost 25 lbs and gained incredible confidence in just 6 months.",
   },
   {
-    before: "https://images.unsplash.com/photo-1535955565956-4a631d6b8b55",
-    after: "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa",
-    name: "Sarah M.",
+    before: "/lovable-uploads/35f18a60-c098-49ce-8982-309c3d88b1fd.png",
+    after: "/lovable-uploads/35f18a60-c098-49ce-8982-309c3d88b1fd.png",
+    name: "Michael Thompson",
+    location: "Austin, Texas",
     rating: 5,
-    description: "Achieved my dream body in just 8 months",
+    description: "From skinny to strong - gained 20 lbs of lean muscle and completely changed my physique with GetFitt.app's structured training program.",
   },
   {
-    before: "https://images.unsplash.com/photo-1509833903111-9cb49d3990b3",
-    after: "https://images.unsplash.com/photo-1590556409324-aa51e868c873",
-    name: "Mike R.",
+    before: "/lovable-uploads/8d432a97-ef90-4de1-a056-0f301024ade2.png",
+    after: "/lovable-uploads/8d432a97-ef90-4de1-a056-0f301024ade2.png",
+    name: "Sarah Martinez",
+    location: "Seattle, Washington",
     rating: 5,
-    description: "Transformed my lifestyle completely with GetFitt.app",
+    description: "Found my strength and confidence through GetFitt.app. The personalized nutrition plans and workouts helped me achieve my dream physique.",
+  },
+  {
+    before: "/lovable-uploads/19275c67-b380-4adb-90fa-e70b4dd5a2d2.png",
+    after: "/lovable-uploads/19275c67-b380-4adb-90fa-e70b4dd5a2d2.png",
+    name: "David Wilson",
+    location: "Boston, Massachusetts",
+    rating: 5,
+    description: "From scrawny to muscular in 8 months. GetFitt.app's program helped me build the body I always wanted.",
+  },
+  {
+    before: "/lovable-uploads/de060a74-999e-4fb1-a789-262eb5c0d0a7.png",
+    after: "/lovable-uploads/de060a74-999e-4fb1-a789-262eb5c0d0a7.png",
+    name: "Chris Rodriguez",
+    location: "Miami, Florida",
+    rating: 5,
+    description: "Completely transformed my body and mindset. GetFitt.app's holistic approach helped me build muscle and strength like never before.",
   },
 ];
 
@@ -65,6 +84,7 @@ const TransformationCarousel = () => {
                   </div>
                   <div className="text-center">
                     <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
+                    <p className="text-sm text-gray-500 mb-2">{item.location}</p>
                     <div className="flex justify-center mb-3">
                       {[...Array(item.rating)].map((_, i) => (
                         <Star
