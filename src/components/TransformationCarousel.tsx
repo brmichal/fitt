@@ -9,22 +9,22 @@ import { Star } from "lucide-react";
 
 const transformations = [
   {
-    before: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
-    after: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b",
+    before: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
+    after: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
     name: "John D.",
     rating: 5,
     description: "Lost 30kg in 6 months following GetFitt.app program",
   },
   {
-    before: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5",
-    after: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61",
+    before: "https://images.unsplash.com/photo-1535955565956-4a631d6b8b55",
+    after: "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa",
     name: "Sarah M.",
     rating: 5,
     description: "Achieved my dream body in just 8 months",
   },
   {
-    before: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5",
-    after: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1",
+    before: "https://images.unsplash.com/photo-1509833903111-9cb49d3990b3",
+    after: "https://images.unsplash.com/photo-1590556409324-aa51e868c873",
     name: "Mike R.",
     rating: 5,
     description: "Transformed my lifestyle completely with GetFitt.app",
