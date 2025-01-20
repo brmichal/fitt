@@ -64,6 +64,19 @@ export function HealthProfileForm({ planType }: HealthProfileFormProps) {
     },
   });
 
+  const getStripeCheckoutUrl = (planType: string): string => {
+    switch (planType) {
+      case "lifestyle-plan":
+        return "https://buy.stripe.com/28ocO9b3K21L6PKaEE";
+      case "performance-plan":
+        return "https://buy.stripe.com/cN2bK50p66i1de8eUV";
+      case "transformation-plan":
+        return "https://buy.stripe.com/cN27tP4Fm9ud6PK8wy";
+      default:
+        return "";
+    }
+  };
+
   const convertWeight = (value: string, toMetric: boolean) => {
     const numValue = parseFloat(value);
     if (isNaN(numValue)) return "";
@@ -110,7 +123,14 @@ export function HealthProfileForm({ planType }: HealthProfileFormProps) {
       title: "Success!",
       description: "Your health profile has been submitted successfully.",
     });
-    navigate('/');
+    
+    // Redirect to Stripe checkout after successful form submission
+    const checkoutUrl = getStripeCheckoutUrl(planType);
+    if (checkoutUrl) {
+      window.location.href = checkoutUrl;
+    } else {
+      navigate('/');
+    }
   }
 
   return (
